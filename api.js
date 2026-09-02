@@ -22,7 +22,15 @@ if(requisicao.method == 'GET' && requisicao.url  == '/tarefas'){
     resposta.statusCode = 200;
     resposta.end(JSON.stringify(resultado));
 }
- else if (requisicao.method == 'POST' && requisicao.url == '/tarefas'){
+
+else if (requisicao.method == 'DELETE' && urlObj.pathname == '/tarefas') {
+
+    const index = urlObj.searchParams.get('index');
+    const tarefaremovida = tarefas.splice(index, 1);
+    resposta.statusCode = 200;
+    resposta.end(JSON.stringify(tarefas));
+
+} else if (requisicao.method == 'POST' && requisicao.url == '/tarefas'){
  let body = ''
 
 requisicao.on('data', (chunk) => {
