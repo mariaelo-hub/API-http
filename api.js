@@ -72,3 +72,9 @@ requisicao.on('end', () => {
 server.listen(porta, () => {
     console.log(`Servidor funcionando na porta ${porta}`);
 });
+
+
+//questao3
+// Sim, tá adequado. Se mandar um JSON errado,
+ //o código pega o erro e avisa que o formato do 
+ //JSON é inválido, então fica fácil entender o que aconteceu.
